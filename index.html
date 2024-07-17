@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stream Deck Drawer</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <nav id="header-nav"></nav>
+    <nav id="lateral-nav">
+        <div class="separator">Tools</div>
+        <div id="tool-box">
+            <button class="material-icons" title="Pencil (P)" style="background-color: lightgray;"><span
+                    class="material-symbols-outlined">stylus</span></button>
+            <button class="material-icons" title="Eraser (E)&#10Double click to erase all"><span
+                    class="material-symbols-outlined">ink_eraser</span></button>
+            <button class="material-icons" title="Fill (F)"><span
+                    class="material-symbols-outlined">colors</span></button>
+            <button class="material-icons" title="Color Picker (Q)"><span
+                    class="material-symbols-outlined">colorize</span></button>
+            <button class="material-icons" title="Text (T)"><span
+                    class="material-symbols-outlined">text_fields</span></button>
+            <button class="material-icons" title="Insert (i)"><span
+                    class="material-symbols-outlined">image</span></button>
+            <button class="material-icons" title="Zoom (+)"><span
+                    class="material-symbols-outlined">zoom_in</span></button>
+            <button class="material-icons" title="Zoom (-)"><span
+                    class="material-symbols-outlined">zoom_out</span></button>
+        </div>
+        <div id="content-tool"></div>
+        <div class="separator">Options</div>
+        <div id="options">
+            <div id="op-pencil-eraser">
+                <div><span>Pencil size</span>: <span id="pencil-size">1</span></div>
+                <!-- <div>
+                    <form action="">
+                        <input type="radio" name="option" id="replace" value="0">       Modo de dibujo
+                        <input type="radio" name="option" id="sum" value="1">
+                    </form>
+                </div> -->
+            </div>
+        </div>
+        <div class="separator">Colors</div>
+        <div id="colors">
+            <input type="color" name="" id="c1" colorformat="rgba" value="#000000">
+            <button class="material-icons" title="Swap colors" id="swich-colors"><span
+                    class="material-symbols-outlined">sync_alt</span></button>
+            <input type="color" name="" id="c2" colorformat="rgba" value="#ffffff">
+        </div>
+        <div id="opacity-box">
+            Opacity
+            <input type="range" min="0" max="255" id="opacity" value="255">
+            <span id="opacity-value">255</span>
+        </div>
+        <div id="filters">
+            <button id="filterBW">Black and Withe</button>
+            <button id="filterSepia">Sepia</button>
+            <button id="filterBW">Invert</button>
+            <button id="filterBW">Blur</button>
+            <button id="filterBW">Black and Withe</button>
+        </div>
+    </nav>
+
+    <nav id="footer-nav"><button id="grid-switch">GRID</button>
+    </nav>
+
+    <div class="center">
+        <div id="lienzo">
+            <div id="png"></div>
+            <canvas id="myCanvas" width="96" height="96"></canvas>
+            <div id="grid" class="hidden"></div>
+            <canvas id="myCanvasprev" width="96" height="96"></canvas>
+        </div>
+    </div>
+    <canvas id="canvasReal" width="96" height="96"></canvas>
+    <div id="cursor-cover"></div>
+    <script type="module" src="js/draw.js"></script>
+</body>
+
+</html>
